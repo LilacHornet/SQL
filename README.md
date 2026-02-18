@@ -45,7 +45,10 @@ Pour le premier témoin, on a ces informations :
 2. Il a le dernier numéro de la rue.
 
 ```sql
-SELECT id, name, address_number, address_street_name FROM person WHERE address_street_name = 'Northwestern Dr' AND address_number = (SELECT MAX(address_number) FROM person WHERE address_street_name = 'Northwestern Dr');
+SELECT id, name, address_number, address_street_name FROM person 
+WHERE address_street_name = 'Northwestern Dr' 
+AND address_number = 
+(SELECT MAX(address_number) FROM person WHERE address_street_name = 'Northwestern Dr');
 ```
 
 - SELECT sert à sélectionner quelles colonnes afficher.
@@ -67,7 +70,9 @@ Pour le deuxieme témoin :
 2. Elle vit sur Franklin Ave
 
 ```sql
-SELECT id, name, address_number, address_street_name FROM person WHERE address_street_name = 'Franklin Ave' AND name LIKE 'Annabel %';
+SELECT id, name, address_number, address_street_name 
+FROM person 
+WHERE address_street_name = 'Franklin Ave' AND name LIKE 'Annabel %';
 ```
 
 - SELECT sert à sélectionner quelles colonnes afficher.
@@ -137,7 +142,9 @@ Resultat :
 On trouve donc deux personnes correspondant au profil du tueur, mais on a encore un indice pour trouver lequel des deux est le coupable.
 
 ```sql
-SELECT name , license_id FROM person WHERE name = 'Joe Germuska' OR name = 'Jeremy Bowers';
+SELECT name , license_id 
+FROM person 
+WHERE name = 'Joe Germuska' OR name = 'Jeremy Bowers';
 ```
 
 - SELECT sert à sélectionner quelles colonnes afficher.
@@ -155,7 +162,9 @@ Resultat :
 On a l'id de leurs permit de leurs permis de conduire, on peut l'utiliser pour trouver la plaque d'immatriculation de leurs voitures.
 
 ```sql
-SELECT id, plate_number FROM drivers_license WHERE (id = 173289 OR id = 423327) AND plate_number LIKE '%H42W%';
+SELECT id, plate_number 
+FROM drivers_license 
+WHERE (id = 173289 OR id = 423327) AND plate_number LIKE '%H42W%';
 ```
 
 - SELECT sert à sélectionner quelles colonnes afficher.
@@ -215,7 +224,9 @@ On trouve donc que le meurtrier est **Jeremy Bowers**.
 On peut aller consulter son interrogatoire.
 
 ```sql
-SELECT transcript FROM interview WHERE person_id = 67318;
+SELECT transcript 
+FROM interview 
+WHERE person_id = 67318;
 ```
 
 - SELECT sert à sélectionner quelles colonnes afficher.
