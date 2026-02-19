@@ -271,6 +271,7 @@ WHERE drivers_license.gender = 'female'
   - La marque de la voiture est Tesla.
   - Le modele de la voiture est Model S.
   - L'id de la personne apparait trois fois dans des lignes de la table facebook_event_checkin où le nom de l'évenement est SQL Symphony Concert et la date est comprise entre le 01/12/2017 et 31/12/2017.
+    - IN s'assure que la valeur de la colonne spécifiée est une des valeurs données en argument.
     - GROUP BY permet de grouper les résultat ayant la même valeur dans une colonne.
     - HAVING sert à filtrer les groupes de GROUP BY, équivalent à un WHERE
     - COUNT permet de compter le nombre de ligne.
